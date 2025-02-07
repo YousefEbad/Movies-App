@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Series Reviewer</title>
+    <title>Movie Reviewer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
         <h3>Movies <span>Reviewer</span></h3>
-        <ul>
+        <ul class="navbar">
             <li><a href="#">TV Series</a></li>
+            <li><a href="people.html">People</a></li>
             <li><a href="index.html">Movies</a></li>
         </ul>
         <form id="search-form">
             <input id="search" type="text" placeholder="Search">
         </form>
+        <ul class="sidebar">
+            <li><a href="#">TV Series</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="index.html">Movies</a></li>
+        </ul>
+        <div id="menu">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+        </div>
     </nav>
     <div class="container">
         <div class="movie_list" id="movie-list">

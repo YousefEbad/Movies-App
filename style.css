@@ -25,13 +25,76 @@ nav{
     align-items: center;
 }
 
+nav #menu{
+    display: none;
+}
+
+nav #menu{
+    height: 45px;
+    width: 80px;
+    position: relative;
+    cursor: pointer;
+}
+
+nav #menu span{
+    background-color: black;
+    width: 100%;
+    height: 6px;
+}
+
+nav #menu .bar1{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+nav #menu .bar2{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+}
+
+nav #menu .bar3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* .bar1, .bar3 {
+    transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out;
+} */
+
+.remove1, .remove3{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    /* transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out; */
+}
+
+.remove2{
+    opacity: 0;
+}
+
+.remove1{
+    transform: rotate(45deg);
+    background-color: red !important;
+}
+
+.remove3{
+    transform: rotate(-45deg);
+    background-color: red !important;
+}
+
+
 nav h3{
     color: #eab308;
     font-size: 34px;
     font-weight: 700;
 }
 
-nav ul{
+nav .navbar{
     width: 32%;
     display: flex;
     justify-content: center;
@@ -42,7 +105,7 @@ nav ul{
 /* nav ul li{
 } */
 
-nav ul li a{
+nav .navbar li a{
     cursor: pointer;
     display: block;
     text-decoration: none;
@@ -57,7 +120,7 @@ nav ul li a{
     font-size: 20px;
 }
 
-nav ul li a:hover{
+nav .navbar li a:hover{
     background-color: #fcd34d;
     color: #7f7e74;
 }
@@ -79,6 +142,47 @@ input:focus {
     background-color: #2a2e6a;
     border: 2px solid transparent;
     transition: 0.4s;
+}
+
+/* Style sidebar */
+
+nav .sidebar{
+    display: none;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgba(39, 60, 151, 0.8);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    z-index: 99999;
+    overflow: hidden; 
+}
+
+nav .sidebar li{
+    margin-bottom: 30px;
+}
+
+nav .sidebar li a{
+    display: block;
+    text-decoration: none;
+    color: #eab308;
+    font-size: 18px;
+    transition: 0.6s;
+    padding: 15px 25px;
+    border-radius: 20px;
+    border: 2px solid #eab308;
+    cursor: pointer;
+    min-width: 140px;
+    text-align: center;
+}
+
+nav .sidebar li a:hover{
+    background-color: #eab308;
+    color: #ffffff;
 }
 
 .container .movie_list{
@@ -159,3 +263,186 @@ input:focus {
 }
 
 
+
+
+/* GPT Update Responsive Media Queries */
+
+@media (max-width: 1410px) {
+    nav {
+        height: 110px; /* Slightly smaller navbar */
+        padding: 0 30px;
+    }
+
+    nav h3 {
+        font-size: 30px; /* Decrease heading size */
+    }
+
+    nav .navbar {
+        width: 40%; /* Adjust navbar width */
+    }
+
+    nav .navbar li a {
+        font-size: 18px; /* Decrease font size */
+        padding: 12px 20px; /* Reduce padding */
+        margin-right: 40px; /* Reduce spacing */
+    }
+
+    nav input {
+        font-size: 18px;
+        padding: 12px 18px;
+    }
+
+    .container {
+        padding-bottom: 30px;
+    }
+
+    .container .movie_list div {
+        width: 300px; /* Reduce movie card size */
+        margin-right: 20px;
+    }
+
+    .container .movie_list div img {
+        width: 300px; /* Reduce image size */
+    }
+
+    .container #movie-list h2 {
+        font-size: 24px;
+    }
+
+    .container .movie_list a {
+        font-size: 12px;
+        padding: 10px 18px;
+    }
+}
+
+@media (max-width: 1210px) {
+    /* hide navbar element and display burger menu */
+    nav #menu {
+        display: block;
+        position: relative;
+        z-index: 9999999999;
+    }
+
+    nav .navbar {
+        display: none;
+    }
+
+    nav h3{
+        font-size: 25px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 650px) {
+    nav .sidebar{
+        width: 100%;
+    }
+
+    nav #menu{
+        width: 60px;
+    }
+
+    nav{
+        position: relative;
+    }
+
+    nav h3{
+        font-size: 20px;
+       transform: translateY(-17px);
+       /* position: relative;
+       right: 10%; */
+    }
+
+    #search-form {
+        position: absolute;
+        left: 10%;
+        bottom: 5%;
+        min-width: auto;
+    }
+
+    #search {
+        width: 60%;
+        max-width: 400px;
+        padding: 8px 14px;
+    }
+
+    /* decrease cards and images size */
+
+    .container .movie_list div {
+        width: 250px;
+        margin-right: 10px;
+    }
+
+    .container .movie_list div img {
+        width: 250px;
+    }
+
+    .container #movie-list h2 {
+        font-size: 20px;
+    }
+
+    .container .movie_list a {
+        font-size: 10px;
+        padding: 8px 14px;
+    }
+
+    .container .movie_list p {
+        font-size: 12px;
+    }
+
+}
+
+/*
+    nav ul {
+        display: none; 
+    }
+
+    nav #menu {
+        display: block;
+    }
+
+    nav {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+    
+    .nav-active {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50vw;
+        height: 100vh;
+        background-color: #22254b;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+    }
+
+    .nav-active ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-active ul li {
+        margin: 20px 0;
+    }
+
+    .nav-active ul li a {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 768px) { 
+    .nav-active {
+        width: 100vw; 
+    }
+
+    .nav-active ul li a {
+        font-size: 20px;
+    }
+}
+*/

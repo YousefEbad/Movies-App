@@ -21,12 +21,11 @@ function displayTVSeries(tvSeries) {
         seriesElement.classList.add('moviepiece');
         seriesElement.innerHTML = `
             <span>
-                <img src="https://image.tmdb.org/t/p/w500/${series.poster_path}" alt="${series.name}">
-                <p class="paragraph">${series.overview}</p>
+                <img src="https://image.tmdb.org/t/p/w500/${series.profile_path}" alt="${series.name}">
             </span>
             <div class="display">
                 <h2>${series.name}</h2>
-                <a href="readseries.html?id=${series.id}">Read more</a>
+                <a href="readpeople.html?id=${series.id}">Read more</a>
             </div>
         `;
         movieList.appendChild(seriesElement);
@@ -34,7 +33,7 @@ function displayTVSeries(tvSeries) {
 }
 
 window.addEventListener('load', () => {
-    const popularTVSeriesUrl = `${baseUrl}/discover/tv?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
+    const popularTVSeriesUrl = `${baseUrl}/discover/person?api_key=${apiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
     fetchTVSeries(popularTVSeriesUrl).then(displayTVSeries);
 });
 
@@ -48,7 +47,6 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
         fetchTVSeries(searchUrl).then(displayTVSeries);
     }
 });
-
 
 
 // Menu toggle

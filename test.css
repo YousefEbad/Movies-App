@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #111827;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+/* Navbar Styles */
+nav {
+    height: 130px;
+    background-color: #22254b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding: 0 20px; /* Add padding for better spacing */
+}
+
+nav h3 {
+    color: #eab308;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    gap: 20px; /* Use gap for spacing between items */
+}
+
+nav ul li a {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #da9138;
+    transition: 0.6s;
+    padding: 15px 25px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    background-color: #fcd34d;
+    color: #7f7e74;
+}
+
+nav input {
+    padding: 15px 20px;
+    border-radius: 25px;
+    border: 2px solid #eab308;
+    outline: none;
+    font-size: 20px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+input:focus {
+    background-color: #2a2e6a;
+    border: 2px solid transparent;
+    transition: 0.4s;
+}
+
+/* Movie List Styles */
+.container .movie_list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    gap: 30px; /* Use gap for spacing between movie items */
+}
+
+.container .movie_list div {
+    width: 350px;
+    background-color: #2a2e6a;
+    border-radius: 10px 10px 0 0;
+    padding-bottom: 30px;
+}
+
+.container .movie_list .moviepiece span {
+    position: relative;
+}
+
+.container .movie_list p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    line-height: 30px;
+    height: 0;
+    overflow: hidden;
+    padding: 0 30px;
+    transition: height 0.5s, padding 0.5s, transform 0.7s;
+}
+
+.container .movie_list .moviepiece span:hover p {
+    height: auto;
+    overflow: visible;
+    padding: 30px 30px;
+    overflow: hidden;
+}
+
+.container .movie_list div .display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.container #movie-list h2 {
+    width: 70%;
+    color: #eab308;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.container .movie_list a {
+    text-decoration: none;
+    padding: 12px 20px;
+    background-color: #eab308;
+    color: #ffffff;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+.container .movie_list a:hover {
+    background-color: #fcd34d;
+}
+
+.container .movie_list div img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    nav ul {
+        gap: 15px; /* Reduce gap between links */
+    }
+
+    nav ul li a {
+        padding: 12px 20px; /* Adjust padding */
+        font-size: 18px; /* Reduce font size */
+    }
+
+    nav input {
+        padding: 12px 18px; /* Adjust padding */
+        font-size: 18px; /* Reduce font size */
+    }
+}
+
+@media (max-width: 992px) {
+    nav {
+        height: auto; /* Allow height to adjust */
+        padding: 15px 0; /* Add padding */
+    }
+
+    nav h3 {
+        font-size: 28px; /* Reduce font size */
+    }
+
+    nav ul {
+        width: 100%; /* Full width for links */
+        justify-content: center; /* Center links */
+        margin-top: 15px; /* Add margin */
+    }
+
+    nav ul li a {
+        padding: 10px 15px; /* Adjust padding */
+        font-size: 16px; /* Reduce font size */
+    }
+
+    nav input {
+        width: 80%; /* Full width for input */
+        margin-top: 15px; /* Add margin */
+    }
+
+    .container .movie_list div {
+        width: 300px; /* Adjust movie item width */
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack items vertically */
+        padding: 10px 0; /* Adjust padding */
+    }
+
+    nav h3 {
+        margin-bottom: 10px; /* Add margin below heading */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Reduce gap between links */
+    }
+
+    nav ul li a {
+        width: 100%; /* Full width for links */
+    }
+
+    nav input {
+        width: 90%; /* Full width for input */
+    }
+
+    .container .movie_list {
+        width: 90%; /* Adjust container width */
+    }
+
+    .container .movie_list div {
+        width: 100%; /* Full width for movie items */
+    }
+}
+
+@media (max-width: 480px) {
+    nav h3 {
+        font-size: 24px; /* Further reduce font size */
+    }
+
+    nav ul li a {
+        padding: 8px 12px; /* Adjust padding */
+        font-size: 14px; /* Further reduce font size */
+    }
+
+    nav input {
+        padding: 8px 12px; /* Adjust padding */
+        font-size: 14px; /* Further reduce font size */
+    }
+
+    .container .movie_list {
+        width: 100%; /* Full width for movie list */
+    }
+}
